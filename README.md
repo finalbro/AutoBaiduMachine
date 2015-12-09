@@ -12,7 +12,7 @@ python2.7测试通过
 numpy:Python的一种开源的数值计算扩展,用于进行矩阵运算.  
 jieba:Python中文分词包.  
 networkx:用Python语言开发的图论与复杂网络建模工具.  
-TextRank4ZH:结合jieba分词使用的textrank分析包,https://github.com/someus/TextRank4ZH,进入github项目按照说明下载该模块.  
+TextRank4ZH:结合jieba分词使用的textrank分析包,下载参见https://github.com/someus/TextRank4ZH.  
 Levenshtein:单词相似度算法,用于计算两个字符串之间的Levenshtein距离.
 
 ```
