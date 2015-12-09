@@ -25,7 +25,7 @@ $ sudo pip install python-Levenshtein
 
 ```
 $ sudo python setup.py install
-
+```
 ##目录结构
 
 ```
