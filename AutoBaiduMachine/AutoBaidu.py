@@ -79,8 +79,8 @@ class AutoBaidu():
         except:
             word = ''
         self.tr4w.train(text=word, speech_tag_filter=False, lower=True, window=2)
-        keywords = self.tr4w.get_keywords(20, word_min_len=1)
-        keyphrases = self.tr4w.get_keyphrases(keywords_num=20, min_occur_num= 2)
+        keywords = self.tr4w.get_keywords(10, word_min_len=1)
+        keyphrases = self.tr4w.get_keyphrases(keywords_num=10, min_occur_num= 2)
         KeyphrasesKeyword = []
         KeyphrasesKeyword.extend(keyphrases)
         KeyphrasesKeyword.extend(keywords[0:2])
@@ -149,7 +149,9 @@ class AutoBaidu():
             return uPreResults[i].encode('utf-8')
         else:
             Results = map(lambda x: (self.length_count(x), x), uPreResults)
-            return max(Results)[1].encode('utf-8')
+            MaxCount = max(Results)[0]
+            BestResult = [result[1] for result in Results if result[0] == MaxCount][0]
+            return BestResult
 
 
     def MainBaidu(self, keyword, ResponseBody):
@@ -163,27 +165,15 @@ class AutoBaidu():
         PreResults.extend(KeyphrasesKeyword)
         PreResults.append(StrongWord)
         PreResults.append(EmWord)
-        PreResults = set(PreResults)
+        PreSet = set(PreResults)
         try:
-            PreResults.remove('')
+            PreSet.remove('')
         except:
             pass
-        if PreResults == set([]):
+        PreList = list(PreSet)
+        PreList.sort(key = PreResults.index)
+        if PreList == []:
             return ''
         else:
-            Result = self.MatchBestResults(keyword, PreResults)
+            Result = self.MatchBestResults(keyword, PreList)
             return Result
-
-if __name__ == '__main__':
-    import urllib2
-    input = open('../list1.txt')
-#    output = open('test_result.txt','w')
-    Baidu = AutoBaidu()
-    for i in input:
-        i = i.strip()
-        url = 'http://www.baidu.com/s?wd='+i
-        body = urllib2.urlopen(url,timeout=5).read()
-#        body = open('test.txt')
-        result = Baidu.MainBaidu(i, body)
-        outline = i+'\t'+result
-        print outline
