@@ -1,6 +1,7 @@
 #AutoBaiduMachine
 -----
 
+Update:2015-12-10 version:0.11
 AutoBaiduMachine 让机器自动从百度中学习到关键词的解释
 
 ##安装
@@ -12,14 +13,17 @@ python2.7测试通过
 numpy:Python的一种开源的数值计算扩展,用于进行矩阵运算.  
 jieba:Python中文分词包.  
 networkx:用Python语言开发的图论与复杂网络建模工具.  
-TextRank4ZH:结合jieba分词使用的textrank分析包,下载参见https://github.com/someus/TextRank4ZH.  
-Levenshtein:单词相似度算法,用于计算两个字符串之间的Levenshtein距离.
+TextRank4ZH:结合jieba分词使用的textrank分析包,建议使用分支,对短语输出进行了优化https://github.com/qiqipipioioi/TextRank4ZH/blob/branch1/textrank4zh/, 原版本参见https://github.com/someus/TextRank4ZH.  
+Levenshtein:单词相似度算法,用于计算两个字符串之间的Levenshtein距离.  
+BeautifulSoup:是一个可以从HTML或XML文件中提取数据的Python库.
+
 
 ```
 $ sudo pip install numpy
 $ sudo pip install jieba
 $ sudo pip install networkx
 $ sudo pip install python-Levenshtein
+$ sudo pip install beautifulsoup4
 ```
 
 安装方法
