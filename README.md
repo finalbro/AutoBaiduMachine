@@ -1,7 +1,7 @@
 #AutoBaiduMachine
 -----
 
-Update:2015-12-10 version:0.11
+Update:2015-12-10 version:0.11  
 AutoBaiduMachine 让机器自动从百度中学习到关键词的解释
 
 ##安装
