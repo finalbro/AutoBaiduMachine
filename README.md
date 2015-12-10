@@ -43,6 +43,7 @@ $ sudo python setup.py install
 ├── LICENSE               #MIT开源许可证
 ├── MANIFEST.in 
 ├── README.md 
+├── Changelog.txt
 ├── setup.py 
 ├── testlist.txt          #测试用关键词列表
 └── test.py               #测试程序
